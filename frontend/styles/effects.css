@@ -1,0 +1,31 @@
+.lifeos-glow {
+    box-shadow:
+      0 0 0 1px rgb(99 102 241 / 0.08),
+      0 12px 40px rgb(99 102 241 / 0.12);
+  }
+  
+  .lifeos-gradient {
+    background:
+      radial-gradient(
+        circle at 20% 20%,
+        rgb(99 102 241 / 0.14),
+        transparent 35%
+      ),
+      radial-gradient(
+        circle at 80% 30%,
+        rgb(20 184 166 / 0.12),
+        transparent 35%
+      );
+  }
+  
+  .lifeos-glass {
+    background: rgb(255 255 255 / 0.72);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgb(255 255 255 / 0.4);
+  }
+  
+  [data-theme="dark"] .lifeos-glass {
+    background: rgb(13 19 33 / 0.72);
+    border-color: rgb(255 255 255 / 0.08);
+  }

@@ -1,0 +1,43 @@
+.badge {
+    display: inline-flex;
+    align-items: center;
+  
+    min-height: 24px;
+    padding: 0 9px;
+  
+    border-radius: 999px;
+  
+    font-size: 11px;
+    font-weight: 600;
+  }
+  
+  .default {
+    background: var(--color-border-subtle);
+    color: var(--color-text-secondary);
+  }
+  
+  .success {
+    background: rgb(16 185 129 / 0.1);
+    color: var(--color-success);
+  }
+  
+  .warning {
+    background: rgb(245 158 11 / 0.1);
+    color: var(--color-warning);
+  }
+  
+  .danger {
+    background: rgb(239 68 68 / 0.1);
+    color: var(--color-error);
+  }
+  
+  .ai {
+    background:
+      linear-gradient(
+        135deg,
+        rgb(99 102 241 / 0.12),
+        rgb(139 92 246 / 0.12)
+      );
+  
+    color: var(--color-accent);
+  }
