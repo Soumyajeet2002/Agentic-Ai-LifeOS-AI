@@ -1,0 +1,231 @@
+.page {
+    width: 100%;
+    max-width: 1400px;
+  
+    margin: 0 auto;
+    padding: 28px 36px 48px;
+  }
+  
+  /* Back */
+  
+  .backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+  
+    margin-bottom: 24px;
+  
+    color: var(--color-text-muted);
+  
+    font-size: 11px;
+    font-weight: 600;
+  
+    transition:
+      color var(--motion-fast) var(--ease-standard);
+  }
+  
+  .backLink:hover {
+    color: var(--color-text-primary);
+  }
+  
+  /* Header */
+  
+  .header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+  
+    margin-bottom: 24px;
+  }
+  
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  
+    margin-bottom: 8px;
+  
+    color: var(--color-primary);
+  
+    font-size: 9px;
+    font-weight: 800;
+  
+    letter-spacing: 0.14em;
+  }
+  
+  .header h1 {
+    margin: 0;
+  
+    color: var(--color-text-primary);
+  
+    font-size: 32px;
+    line-height: 1.1;
+  
+    letter-spacing: -0.045em;
+  }
+  
+  .description {
+    max-width: 600px;
+  
+    margin: 9px 0 0;
+  
+    color: var(--color-text-secondary);
+  
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  
+  /* Agent status */
+  
+  .status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  
+    flex-shrink: 0;
+  
+    padding: 8px 11px;
+  
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+  
+    background: var(--color-surface);
+  
+    color: var(--color-text-secondary);
+  
+    font-size: 10px;
+    font-weight: 600;
+  }
+  
+  .statusDot {
+    width: 6px;
+    height: 6px;
+  
+    border-radius: 50%;
+  
+    background: var(--color-warning);
+  }
+  
+  /* Goal */
+  
+  .goalCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+  
+    padding: 24px;
+  
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+  
+    background: var(--color-surface);
+  }
+  
+  .sectionLabel {
+    margin: 0 0 7px;
+  
+    color: var(--color-text-muted);
+  
+    font-size: 9px;
+    font-weight: 700;
+  
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  
+  .goalCard h2 {
+    margin: 0;
+  
+    color: var(--color-text-primary);
+  
+    font-size: 21px;
+    line-height: 1.25;
+  
+    letter-spacing: -0.03em;
+  }
+  
+  .goalDescription {
+    max-width: 680px;
+  
+    margin: 8px 0 0;
+  
+    color: var(--color-text-secondary);
+  
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  
+  /* Deadline */
+  
+  .deadline {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  
+    min-width: 150px;
+  
+    padding: 11px 13px;
+  
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+  
+    color: var(--color-text-muted);
+  }
+  
+  .deadline > svg {
+    color: var(--color-primary);
+  }
+  
+  .deadline div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .deadline span {
+    font-size: 9px;
+  }
+  
+  .deadline strong {
+    color: var(--color-text-primary);
+  
+    font-size: 11px;
+    font-weight: 600;
+  }
+  
+  /* Workspace */
+  
+  .workspace {
+    margin-top: 20px;
+  }
+  
+  .placeholder {
+    display: grid;
+    place-items: center;
+  
+    min-height: 400px;
+  
+    border: 1px dashed var(--color-border);
+    border-radius: 18px;
+  
+    color: var(--color-text-muted);
+  
+    font-size: 12px;
+  }
+
+
+  .grid {
+    display: grid;
+  
+    grid-template-columns:
+      minmax(0, 1.5fr)
+      minmax(320px, 1fr);
+  
+    gap: 20px;
+  }
+
+  .actions {
+    margin-top: 20px;
+  }
