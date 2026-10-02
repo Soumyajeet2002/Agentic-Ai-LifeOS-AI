@@ -1,0 +1,239 @@
+.page {
+    width: 100%;
+    max-width: 1000px;
+  
+    margin: 0 auto;
+    padding: 32px 36px 60px;
+  }
+  
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  
+    margin-bottom: 28px;
+  
+    color: var(--color-text-muted);
+  
+    font-size: 10px;
+  }
+  
+  .back:hover {
+    color: var(--color-text-primary);
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+  
+    margin-bottom: 28px;
+  }
+  
+  .status {
+    display: inline-block;
+  
+    padding: 4px 7px;
+  
+    border-radius: 6px;
+  
+    background: rgb(16 185 129 / 0.08);
+  
+    color: var(--color-success);
+  
+    font-size: 8px;
+    font-weight: 750;
+  
+    text-transform: uppercase;
+  }
+  
+  .header h1 {
+    margin: 12px 0 7px;
+  
+    color: var(--color-text-primary);
+  
+    font-size: 30px;
+    letter-spacing: -0.045em;
+  }
+  
+  .header p {
+    max-width: 600px;
+  
+    margin: 0;
+  
+    color: var(--color-text-secondary);
+  
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  
+  .deadline {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  
+    min-width: 150px;
+  
+    padding: 14px;
+  
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+  
+    color: var(--color-text-muted);
+  
+    font-size: 9px;
+  }
+  
+  .deadline strong {
+    color: var(--color-text-primary);
+  
+    font-size: 11px;
+  }
+  
+  .progressCard {
+    padding: 20px;
+  
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+  
+    background: var(--color-surface);
+  }
+  
+  .progressHeader {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .progressHeader div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    width: 100%;
+  
+    color: var(--color-text-muted);
+  
+    font-size: 10px;
+  }
+  
+  .progressHeader strong {
+    color: var(--color-text-primary);
+  
+    font-size: 18px;
+  }
+  
+  .progressTrack {
+    height: 7px;
+  
+    margin-top: 14px;
+  
+    overflow: hidden;
+  
+    border-radius: 999px;
+  
+    background: var(--color-border);
+  }
+  
+  .progressBar {
+    height: 100%;
+  
+    border-radius: inherit;
+  
+    background: var(--color-primary);
+  }
+  
+  .section {
+    margin-top: 30px;
+  }
+  
+  .sectionHeader p,
+  .nextAction p {
+    margin: 0 0 5px;
+  
+    color: var(--color-primary);
+  
+    font-size: 8px;
+    font-weight: 800;
+  
+    letter-spacing: 0.1em;
+  }
+  
+  .sectionHeader h2 {
+    margin: 0 0 14px;
+  
+    color: var(--color-text-primary);
+  
+    font-size: 17px;
+  }
+  
+  .milestones {
+    overflow: hidden;
+  
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+  
+    background: var(--color-surface);
+  }
+  
+  .milestone {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+  
+    padding: 15px 16px;
+  
+    color: var(--color-text-secondary);
+  
+    font-size: 11px;
+  }
+  
+  .milestone + .milestone {
+    border-top: 1px solid var(--color-border);
+  }
+  
+  .completedIcon,
+  .pendingIcon {
+    display: grid;
+    place-items: center;
+  
+    width: 23px;
+    height: 23px;
+  
+    flex-shrink: 0;
+  
+    border-radius: 7px;
+  }
+  
+  .completedIcon {
+    background: rgb(16 185 129 / 0.09);
+    color: var(--color-success);
+  }
+  
+  .pendingIcon {
+    color: var(--color-text-muted);
+    background: var(--color-background);
+  }
+  
+  .completedText {
+    color: var(--color-text-muted);
+    text-decoration: line-through;
+  }
+  
+  .nextAction {
+    margin-top: 30px;
+    padding: 18px;
+  
+    border: 1px solid rgb(99 102 241 / 0.16);
+    border-radius: 14px;
+  
+    background: rgb(99 102 241 / 0.04);
+  }
+  
+  .nextAction h2 {
+    margin: 0;
+  
+    color: var(--color-text-primary);
+  
+    font-size: 13px;
+    font-weight: 600;
+  }
