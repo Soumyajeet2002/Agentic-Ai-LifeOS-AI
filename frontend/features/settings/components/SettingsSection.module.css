@@ -1,0 +1,38 @@
+.section {
+    display: flex;
+    flex-direction: column;
+  
+    border: 1px solid var(--color-border);
+    border-radius: 13px;
+  
+    background: var(--color-surface);
+  }
+  
+  .header {
+    padding: 17px 18px;
+  
+    border-bottom: 1px solid var(--color-border);
+  }
+  
+  .header h2 {
+    margin: 0;
+  
+    color: var(--color-text-primary);
+  
+    font-size: 13px;
+    font-weight: 650;
+  }
+  
+  .header p {
+    margin: 5px 0 0;
+  
+    color: var(--color-text-muted);
+  
+    font-size: 9px;
+    line-height: 1.5;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+  }

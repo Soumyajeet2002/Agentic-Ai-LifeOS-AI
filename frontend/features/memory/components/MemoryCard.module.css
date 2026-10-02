@@ -1,0 +1,158 @@
+.card {
+    display: flex;
+  
+    gap: 14px;
+  
+    padding: 17px;
+  
+    border: 1px solid var(--color-border);
+    border-radius: 13px;
+  
+    background: var(--color-surface);
+  }
+  
+  .icon {
+    display: grid;
+    place-items: center;
+  
+    width: 34px;
+    height: 34px;
+  
+    flex-shrink: 0;
+  
+    border-radius: 9px;
+  
+    background: rgb(139 92 246 / 0.08);
+  
+    color: var(--color-purple);
+  }
+  
+  .content {
+    min-width: 0;
+    flex: 1;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .category {
+    padding: 3px 7px;
+  
+    border-radius: 5px;
+  
+    background: var(--color-background);
+  
+    color: var(--color-text-muted);
+  
+    font-size: 7px;
+    font-weight: 750;
+  
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  
+  .actions {
+    position: relative;
+  }
+  
+  .actions > button {
+    display: grid;
+    place-items: center;
+  
+    width: 28px;
+    height: 28px;
+  
+    border: 0;
+    border-radius: 7px;
+  
+    background: transparent;
+  
+    color: var(--color-text-muted);
+  
+    cursor: pointer;
+  }
+  
+  .actions > button:hover {
+    background: var(--color-background);
+  
+    color: var(--color-text-primary);
+  }
+  
+  .menu {
+    position: absolute;
+  
+    top: 31px;
+    right: 0;
+  
+    z-index: 10;
+  
+    display: none;
+    flex-direction: column;
+  
+    min-width: 90px;
+  
+    padding: 5px;
+  
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+  
+    background: var(--color-surface);
+  
+    box-shadow:
+      0 8px 25px rgb(15 23 42 / 0.1);
+  }
+  
+  .actions:hover .menu {
+    display: flex;
+  }
+  
+  .menu button {
+    padding: 7px 9px;
+  
+    border: 0;
+    border-radius: 5px;
+  
+    background: transparent;
+  
+    color: var(--color-text-secondary);
+  
+    text-align: left;
+  
+    font-family: inherit;
+    font-size: 9px;
+  
+    cursor: pointer;
+  }
+  
+  .menu button:hover {
+    background: var(--color-background);
+  
+    color: var(--color-text-primary);
+  }
+  
+  .content p {
+    margin: 10px 0 0;
+  
+    max-width: 720px;
+  
+    color: var(--color-text-primary);
+  
+    font-size: 11px;
+  
+    line-height: 1.55;
+  }
+  
+  .footer {
+    display: flex;
+  
+    gap: 12px;
+  
+    margin-top: 10px;
+  
+    color: var(--color-text-muted);
+  
+    font-size: 8px;
+  }

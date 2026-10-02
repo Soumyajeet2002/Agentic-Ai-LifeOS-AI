@@ -1,0 +1,130 @@
+.card {
+    padding: 22px;
+  
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+  
+    background: var(--color-surface);
+  }
+  
+  .header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  
+    margin-bottom: 20px;
+  }
+  
+  .eyebrow {
+    margin: 0 0 6px;
+  
+    color: var(--color-primary);
+  
+    font-size: 9px;
+    font-weight: 800;
+  
+    letter-spacing: 0.12em;
+  }
+  
+  .header h2 {
+    margin: 0;
+  
+    color: var(--color-text-primary);
+  
+    font-size: 17px;
+    font-weight: 650;
+  
+    letter-spacing: -0.025em;
+  }
+  
+  .live {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  
+    color: var(--color-text-muted);
+  
+    font-size: 9px;
+    font-weight: 600;
+  }
+  
+  .live > span {
+    width: 5px;
+    height: 5px;
+  
+    border-radius: 50%;
+  
+    background: var(--color-success);
+  }
+  
+  .list {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .item {
+    display: flex;
+    gap: 11px;
+  
+    padding: 9px 0;
+  }
+  
+  .item + .item {
+    border-top: 1px solid var(--color-border);
+  }
+  
+  .icon {
+    display: grid;
+    place-items: center;
+  
+    width: 25px;
+    height: 25px;
+  
+    flex-shrink: 0;
+  
+    border-radius: 8px;
+  }
+  
+  .success {
+    background: rgb(16 185 129 / 0.09);
+    color: var(--color-success);
+  }
+  
+  .info {
+    background: rgb(99 102 241 / 0.09);
+    color: var(--color-primary);
+  }
+  
+  .warning {
+    background: rgb(245 158 11 / 0.10);
+    color: var(--color-warning);
+  }
+  
+  .error {
+    background: rgb(239 68 68 / 0.09);
+    color: var(--color-error);
+  }
+  
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  
+    width: 100%;
+  }
+  
+  .content > span {
+    color: var(--color-text-secondary);
+  
+    font-size: 11px;
+    line-height: 1.5;
+  }
+  
+  .content time {
+    flex-shrink: 0;
+  
+    color: var(--color-text-muted);
+  
+    font-size: 9px;
+  }

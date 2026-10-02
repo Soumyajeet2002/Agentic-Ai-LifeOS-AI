@@ -1,0 +1,165 @@
+.card {
+    display: flex;
+    flex-direction: column;
+  
+    min-height: 250px;
+  
+    padding: 17px;
+  
+    border: 1px solid var(--color-border);
+    border-radius: 13px;
+  
+    background: var(--color-surface);
+  }
+  
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    display: grid;
+    place-items: center;
+  
+    width: 36px;
+    height: 36px;
+  
+    border-radius: 9px;
+  
+    background: var(--color-background);
+  
+    color: var(--color-text-primary);
+  
+    font-size: 13px;
+    font-weight: 750;
+  }
+  
+  .status {
+    display: inline-flex;
+    align-items: center;
+  
+    gap: 4px;
+  
+    color: var(--color-text-muted);
+  
+    font-size: 8px;
+    font-weight: 650;
+  }
+  
+  .body {
+    margin-top: 15px;
+  }
+  
+  .body h3 {
+    margin: 0;
+  
+    color: var(--color-text-primary);
+  
+    font-size: 12px;
+    font-weight: 650;
+  }
+  
+  .body p {
+    margin: 7px 0 0;
+  
+    color: var(--color-text-secondary);
+  
+    font-size: 9px;
+    line-height: 1.55;
+  }
+  
+  .permissions {
+    margin-top: 14px;
+  
+    padding: 10px;
+  
+    border-radius: 8px;
+  
+    background: var(--color-background);
+  }
+  
+  .permissionHeader {
+    display: flex;
+    align-items: center;
+  
+    gap: 5px;
+  
+    color: var(--color-text-secondary);
+  
+    font-size: 8px;
+    font-weight: 650;
+  }
+  
+  .permissionHeader svg {
+    color: var(--color-primary);
+  }
+  
+  .permissions ul {
+    margin: 7px 0 0;
+    padding-left: 16px;
+  
+    color: var(--color-text-muted);
+  
+    font-size: 8px;
+  
+    line-height: 1.7;
+  }
+  
+  .footer {
+    display: flex;
+  
+    margin-top: auto;
+    padding-top: 16px;
+  }
+  
+  .footer button {
+    width: 100%;
+    height: 32px;
+  
+    border-radius: 8px;
+  
+    font-family: inherit;
+    font-size: 9px;
+    font-weight: 650;
+  
+    cursor: pointer;
+  }
+  
+  .connect {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    gap: 5px;
+  
+    border: 1px solid var(--color-primary);
+  
+    background: var(--color-primary);
+  
+    color: white;
+  }
+  
+  .disconnect {
+    border: 1px solid var(--color-border);
+  
+    background: transparent;
+  
+    color: var(--color-text-secondary);
+  }
+  
+  .disconnect:hover {
+    border-color: var(--color-error);
+  
+    color: var(--color-error);
+  }
+  
+  .disabled {
+    border: 1px solid var(--color-border);
+  
+    background: var(--color-background);
+  
+    color: var(--color-text-muted);
+  
+    cursor: not-allowed !important;
+  }

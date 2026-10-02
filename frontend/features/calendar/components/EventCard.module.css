@@ -1,0 +1,92 @@
+.card {
+    display: flex;
+  
+    min-height: 70px;
+  
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-primary);
+    border-radius: 10px;
+  
+    background: var(--color-surface);
+  }
+  
+  .meeting {
+    border-left-color: var(--color-primary);
+  }
+  
+  .focus {
+    border-left-color: var(--color-secondary);
+  }
+  
+  .personal {
+    border-left-color: var(--color-purple);
+  }
+  
+  .task {
+    border-left-color: var(--color-success);
+  }
+  
+  .time {
+    display: flex;
+    flex-direction: column;
+  
+    gap: 4px;
+  
+    width: 72px;
+  
+    padding: 14px 10px;
+  
+    border-right: 1px solid var(--color-border);
+  
+    color: var(--color-text-muted);
+  
+    font-size: 9px;
+  }
+  
+  .time span:first-child {
+    color: var(--color-text-primary);
+  
+    font-weight: 650;
+  }
+  
+  .content {
+    flex: 1;
+  
+    padding: 13px 15px;
+  }
+  
+  .content h3 {
+    margin: 0;
+  
+    color: var(--color-text-primary);
+  
+    font-size: 11px;
+    font-weight: 650;
+  }
+  
+  .content p {
+    margin: 5px 0 0;
+  
+    color: var(--color-text-muted);
+  
+    font-size: 9px;
+  }
+  
+  .meta {
+    display: flex;
+  
+    gap: 10px;
+  
+    margin-top: 8px;
+  
+    color: var(--color-text-muted);
+  
+    font-size: 8px;
+  }
+  
+  .meta span {
+    display: inline-flex;
+    align-items: center;
+  
+    gap: 4px;
+  }

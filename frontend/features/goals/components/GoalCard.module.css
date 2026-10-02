@@ -1,0 +1,160 @@
+.card {
+    padding: 20px;
+  
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+  
+    background: var(--color-surface);
+  
+    transition:
+      border-color 160ms ease,
+      transform 160ms ease;
+  }
+  
+  .card:hover {
+    border-color: rgb(99 102 241 / 0.28);
+    transform: translateY(-1px);
+  }
+  
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .status {
+    padding: 4px 7px;
+  
+    border-radius: 6px;
+  
+    background: rgb(16 185 129 / 0.08);
+  
+    color: var(--color-success);
+  
+    font-size: 8px;
+    font-weight: 750;
+  
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .open {
+    display: grid;
+    place-items: center;
+  
+    width: 28px;
+    height: 28px;
+  
+    border-radius: 8px;
+  
+    color: var(--color-text-muted);
+  }
+  
+  .open:hover {
+    background: var(--color-background);
+    color: var(--color-text-primary);
+  }
+  
+  .card h3 {
+    margin: 16px 0 6px;
+  
+    color: var(--color-text-primary);
+  
+    font-size: 15px;
+    font-weight: 650;
+  
+    letter-spacing: -0.02em;
+  }
+  
+  .description {
+    min-height: 34px;
+  
+    margin: 0;
+  
+    color: var(--color-text-muted);
+  
+    font-size: 10px;
+    line-height: 1.55;
+  }
+  
+  .progressHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    margin-top: 20px;
+    margin-bottom: 7px;
+  
+    color: var(--color-text-muted);
+  
+    font-size: 9px;
+  }
+  
+  .progressHeader strong {
+    color: var(--color-text-primary);
+  
+    font-size: 10px;
+  }
+  
+  .progressTrack {
+    height: 5px;
+  
+    overflow: hidden;
+  
+    border-radius: 999px;
+  
+    background: var(--color-border);
+  }
+  
+  .progressBar {
+    height: 100%;
+  
+    border-radius: inherit;
+  
+    background: var(--color-primary);
+  }
+  
+  .meta {
+    display: flex;
+    justify-content: space-between;
+  
+    margin-top: 11px;
+  
+    color: var(--color-text-muted);
+  
+    font-size: 9px;
+  }
+  
+  .deadline {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .nextAction {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  
+    margin-top: 16px;
+    padding-top: 14px;
+  
+    border-top: 1px solid var(--color-border);
+  }
+  
+  .nextAction span {
+    color: var(--color-text-muted);
+  
+    font-size: 8px;
+    font-weight: 700;
+  
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  
+  .nextAction strong {
+    color: var(--color-text-secondary);
+  
+    font-size: 10px;
+    font-weight: 550;
+  }
