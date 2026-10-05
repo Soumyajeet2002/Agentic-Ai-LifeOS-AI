@@ -1,0 +1,680 @@
+/* =========================
+   PAGE
+========================= */
+
+.page {
+    width: 100%;
+  
+    box-sizing: border-box;
+  
+    padding: 40px 48px 64px;
+  }
+  
+  /* =========================
+     HEADER
+  ========================= */
+  
+  .header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  
+    gap: 32px;
+  }
+  
+  /* =========================
+     BACK LINK
+  ========================= */
+  
+  .back {
+    display: inline-flex;
+    align-items: center;
+  
+    gap: 7px;
+  
+    margin-bottom: 20px;
+  
+    color: var(--color-text-muted);
+  
+    font-size: 13px;
+    font-weight: 500;
+  
+    text-decoration: none;
+  
+    transition: color 0.15s ease;
+  }
+  
+  .back:hover {
+    color: var(--color-primary);
+  }
+  
+  /* =========================
+     TITLE
+  ========================= */
+  
+  .titleRow {
+    display: flex;
+    align-items: center;
+  
+    gap: 14px;
+  }
+  
+  .icon {
+    display: grid;
+    place-items: center;
+  
+    width: 48px;
+    height: 48px;
+  
+    flex-shrink: 0;
+  
+    border-radius: 11px;
+  
+    background: rgb(99 102 241 / 0.08);
+  
+    color: var(--color-primary);
+  }
+  
+  .titleRow h1 {
+    margin: 0;
+  
+    color: var(--color-text-primary);
+  
+    font-size: 26px;
+    font-weight: 700;
+  
+    line-height: 1.25;
+  
+    letter-spacing: -0.03em;
+  }
+  
+  .titleRow p {
+    margin: 6px 0 0;
+  
+    color: var(--color-text-muted);
+  
+    font-size: 13px;
+  
+    line-height: 1.5;
+  }
+  
+  /* =========================
+     NEW CHAT
+  ========================= */
+  
+  .newChat {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    gap: 8px;
+  
+    height: 40px;
+  
+    padding: 0 16px;
+  
+    flex-shrink: 0;
+  
+    border: 0;
+    border-radius: 9px;
+  
+    background: var(--color-primary);
+  
+    color: white;
+  
+    font-family: inherit;
+  
+    font-size: 13px;
+    font-weight: 600;
+  
+    cursor: pointer;
+  
+    transition:
+      opacity 0.15s ease,
+      transform 0.15s ease;
+    text-decoration: none;
+  }
+  
+  .newChat:hover {
+    opacity: 0.9;
+  }
+  
+  .newChat:active {
+    transform: translateY(1px);
+  }
+  
+  /* =========================
+     TABS
+  ========================= */
+  
+  .tabs {
+    display: flex;
+  
+    gap: 6px;
+  
+    margin-top: 32px;
+  
+    border-bottom: 1px solid var(--color-border);
+  }
+  
+  .tabs button {
+    position: relative;
+  
+    padding: 11px 14px;
+  
+    border: 0;
+  
+    background: transparent;
+  
+    color: var(--color-text-muted);
+  
+    font-family: inherit;
+  
+    font-size: 13px;
+    font-weight: 500;
+  
+    cursor: pointer;
+  
+    transition: color 0.15s ease;
+  }
+  
+  .tabs button:hover {
+    color: var(--color-text-primary);
+  }
+  
+  .tabs .activeTab {
+    color: var(--color-primary);
+  
+    font-weight: 600;
+  }
+  
+  .tabs .activeTab::after {
+    position: absolute;
+  
+    right: 12px;
+    bottom: -1px;
+    left: 12px;
+  
+    height: 2px;
+  
+    border-radius: 2px;
+  
+    background: var(--color-primary);
+  
+    content: "";
+  }
+  
+  /* =========================
+     MAIN CONTENT
+  ========================= */
+  
+  .content {
+    display: grid;
+  
+    grid-template-columns:
+      minmax(0, 1fr) 320px;
+  
+    gap: 18px;
+  
+    margin-top: 22px;
+  }
+  
+  .overview {
+    display: flex;
+    flex-direction: column;
+  
+    gap: 18px;
+  }
+  
+  .side {
+    min-width: 0;
+  }
+  
+  /* =========================
+     CARD
+  ========================= */
+  
+  .card {
+    padding: 22px;
+  
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+  
+    background: var(--color-surface);
+  
+    transition:
+      border-color 0.15s ease,
+      box-shadow 0.15s ease;
+  }
+  
+  .card:hover {
+    border-color: rgb(99 102 241 / 0.25);
+  
+    box-shadow:
+      0 8px 24px rgb(15 23 42 / 0.05);
+  }
+  
+  /* =========================
+     CARD HEADER
+  ========================= */
+  
+  .cardHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  
+    gap: 24px;
+  }
+  
+  .cardHeader span:first-child {
+    color: var(--color-primary);
+  
+    font-size: 10px;
+    font-weight: 800;
+  
+    letter-spacing: 0.12em;
+  }
+  
+  .cardHeader h2 {
+    margin: 7px 0 0;
+  
+    color: var(--color-text-primary);
+  
+    font-size: 18px;
+    font-weight: 700;
+  
+    line-height: 1.35;
+  }
+  
+  .cardHeader button {
+    padding: 4px 0;
+  
+    border: 0;
+  
+    background: transparent;
+  
+    color: var(--color-primary);
+  
+    font-family: inherit;
+  
+    font-size: 12px;
+    font-weight: 600;
+  
+    cursor: pointer;
+  }
+  
+  .cardHeader button:hover {
+    text-decoration: underline;
+  }
+  
+  /* =========================
+     MEMORY BADGE
+  ========================= */
+  
+  .memory {
+    display: inline-flex;
+    align-items: center;
+  
+    gap: 6px;
+  
+    padding: 6px 9px;
+  
+    border-radius: 7px;
+  
+    background: rgb(139 92 246 / 0.08);
+  
+    color: var(--color-purple);
+  
+    font-size: 11px !important;
+    font-weight: 600 !important;
+  
+    letter-spacing: normal !important;
+  
+    white-space: nowrap;
+  }
+  
+  /* =========================
+     STATS
+  ========================= */
+  
+  .stats {
+    display: grid;
+  
+    grid-template-columns:
+      repeat(3, 1fr);
+  
+    gap: 12px;
+  
+    margin-top: 22px;
+  }
+  
+  .stats div {
+    padding: 14px;
+  
+    border-radius: 10px;
+  
+    background: var(--color-background);
+  }
+  
+  .stats strong {
+    display: block;
+  
+    color: var(--color-text-primary);
+  
+    font-size: 22px;
+    font-weight: 700;
+  
+    line-height: 1.2;
+  }
+  
+  .stats span {
+    display: block;
+  
+    margin-top: 5px;
+  
+    color: var(--color-text-muted);
+  
+    font-size: 12px;
+  
+    line-height: 1.4;
+  }
+  
+  /* =========================
+     CHAT LIST
+  ========================= */
+  
+  .chatList {
+    display: flex;
+    flex-direction: column;
+  
+    gap: 4px;
+  
+    margin-top: 18px;
+  }
+  
+  .chat {
+    display: flex;
+    align-items: center;
+  
+    gap: 12px;
+  
+    padding: 11px;
+  
+    border-radius: 9px;
+  
+    text-decoration: none;
+  
+    transition: background 0.15s ease;
+  }
+  
+  .chat:hover {
+    background: var(--color-background);
+  }
+  
+  .chatIcon {
+    display: grid;
+    place-items: center;
+  
+    width: 36px;
+    height: 36px;
+  
+    flex-shrink: 0;
+  
+    border-radius: 8px;
+  
+    background: rgb(99 102 241 / 0.07);
+  
+    color: var(--color-primary);
+  }
+  
+  .chat strong,
+  .chat span {
+    display: block;
+  }
+  
+  .chat strong {
+    overflow: hidden;
+  
+    color: var(--color-text-primary);
+  
+    font-size: 13px;
+    font-weight: 600;
+  
+    line-height: 1.4;
+  
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .chat span {
+    max-width: 500px;
+  
+    margin-top: 4px;
+  
+    overflow: hidden;
+  
+    color: var(--color-text-muted);
+  
+    font-size: 12px;
+  
+    line-height: 1.4;
+  
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  /* =========================
+     EMPTY STATE
+  ========================= */
+  
+  .empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    padding: 40px 16px;
+  
+    color: var(--color-text-muted);
+  
+    text-align: center;
+  }
+  
+  .empty p {
+    margin: 9px 0;
+  
+    font-size: 13px;
+  }
+  
+  .empty button {
+    padding: 4px 0;
+  
+    border: 0;
+  
+    background: transparent;
+  
+    color: var(--color-primary);
+  
+    font-family: inherit;
+  
+    font-size: 12px;
+    font-weight: 600;
+  
+    cursor: pointer;
+  }
+  
+  .empty button:hover {
+    text-decoration: underline;
+  }
+  
+  /* =========================
+     MEMORY BOX
+  ========================= */
+  
+  .memoryBox {
+    display: flex;
+  
+    gap: 11px;
+  
+    margin-top: 18px;
+  
+    padding: 14px;
+  
+    border-radius: 10px;
+  
+    background: var(--color-background);
+  
+    color: var(--color-purple);
+  }
+  
+  .memoryBox strong {
+    display: block;
+  
+    color: var(--color-text-primary);
+  
+    font-size: 13px;
+    font-weight: 600;
+  }
+  
+  .memoryBox p {
+    margin: 5px 0 0;
+  
+    color: var(--color-text-muted);
+  
+    font-size: 12px;
+  
+    line-height: 1.6;
+  }
+  
+  /* =========================
+     SETTINGS BUTTON
+  ========================= */
+  
+  .settingsButton {
+    width: 100%;
+  
+    margin-top: 12px;
+  
+    height: 38px;
+  
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+  
+    background: var(--color-surface);
+  
+    color: var(--color-text-secondary);
+  
+    font-family: inherit;
+  
+    font-size: 12px;
+    font-weight: 500;
+  
+    cursor: pointer;
+  
+    transition:
+      border-color 0.15s ease,
+      color 0.15s ease,
+      background 0.15s ease;
+  }
+  
+  .settingsButton:hover {
+    border-color: var(--color-primary);
+  
+    background: rgb(99 102 241 / 0.03);
+  
+    color: var(--color-primary);
+  }
+  
+  /* =========================
+     NOT FOUND
+  ========================= */
+  
+  .notFound {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    height: 70vh;
+  
+    color: var(--color-text-muted);
+  
+    text-align: center;
+  }
+  
+  .notFound h1 {
+    margin: 0 0 8px;
+  
+    color: var(--color-text-primary);
+  
+    font-size: 22px;
+    font-weight: 700;
+  }
+  
+  .notFound a {
+    color: var(--color-primary);
+  
+    font-size: 13px;
+  
+    text-decoration: none;
+  }
+  
+  .notFound a:hover {
+    text-decoration: underline;
+  }
+  
+  /* =========================
+     RESPONSIVE
+  ========================= */
+  
+  @media (max-width: 1100px) {
+    .page {
+      padding: 32px;
+    }
+  
+    .content {
+      grid-template-columns: 1fr;
+    }
+  
+    .side {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .page {
+      padding: 24px 20px 40px;
+    }
+  
+    .header {
+      align-items: flex-start;
+      flex-direction: column;
+  
+      gap: 20px;
+    }
+  
+    .titleRow h1 {
+      font-size: 23px;
+    }
+  
+    .newChat {
+      width: 100%;
+    }
+  
+    .tabs {
+      margin-top: 26px;
+  
+      overflow-x: auto;
+    }
+  
+    .tabs button {
+      flex-shrink: 0;
+    }
+  
+    .stats {
+      grid-template-columns: 1fr;
+    }
+  
+    .card {
+      padding: 18px;
+    }
+  }
