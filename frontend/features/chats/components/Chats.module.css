@@ -1,0 +1,792 @@
+/* =========================================================
+   PAGE
+========================================================= */
+
+.page {
+  display: flex;
+
+  width: 100%;
+  height: 100vh;
+
+  overflow: hidden;
+
+  background: var(--color-background);
+}
+
+/* =========================================================
+   WORKSPACE
+========================================================= */
+
+.workspace {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  flex: 1;
+
+  height: 100%;
+
+  background: var(--color-background);
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 78px;
+
+  padding: 0 32px;
+
+  box-sizing: border-box;
+
+  border-bottom: 1px solid var(--color-border);
+
+  background: var(--color-surface);
+}
+
+/* ---------------------------------------------------------
+   Header Info
+--------------------------------------------------------- */
+
+.headerInfo {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+.eyebrow {
+  margin: 0;
+
+  color: var(--color-primary);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.13em;
+}
+
+.headerInfo h1 {
+  max-width: 420px;
+
+  margin: 5px 0 0;
+
+  overflow: hidden;
+
+  color: var(--color-text-primary);
+
+  font-size: 19px;
+  font-weight: 700;
+
+  line-height: 1.3;
+
+  letter-spacing: -0.025em;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   HEADER ACTIONS
+========================================================= */
+
+.headerActions {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-left: 24px;
+}
+
+/* =========================================================
+   PROJECT SELECTOR
+========================================================= */
+
+.projectSelector {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.projectSelector label {
+  color: var(--color-text-muted);
+
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.projectSelector select {
+  height: 38px;
+
+  min-width: 170px;
+
+  padding: 0 12px;
+
+  border: 1px solid var(--color-border);
+  border-radius: 9px;
+
+  outline: none;
+
+  background: var(--color-surface);
+
+  color: var(--color-text-secondary);
+
+  font-family: inherit;
+  font-size: 12px;
+
+  cursor: pointer;
+
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.projectSelector select:hover {
+  border-color: rgb(99 102 241 / 0.35);
+}
+
+.projectSelector select:focus {
+  border-color: var(--color-primary);
+
+  box-shadow:
+    0 0 0 3px
+    rgb(99 102 241 / 0.08);
+}
+
+/* =========================================================
+   AI AGENT BADGE
+========================================================= */
+
+.agentBadge {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  height: 38px;
+
+  padding: 0 13px;
+
+  box-sizing: border-box;
+
+  border: 1px solid
+    rgb(99 102 241 / 0.12);
+
+  border-radius: 9px;
+
+  background:
+    rgb(99 102 241 / 0.06);
+
+  color: var(--color-primary);
+
+  font-size: 12px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   MESSAGES AREA
+========================================================= */
+
+.messages {
+  flex: 1;
+
+  overflow-y: auto;
+
+  padding: 36px 32px 120px;
+
+  box-sizing: border-box;
+
+  scroll-behavior: smooth;
+}
+
+/*
+   Keep the conversation centered instead of
+   stretching across the entire screen.
+*/
+
+.messages > * {
+  width: min(820px, 100%);
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================================================
+   MESSAGE COMMON
+========================================================= */
+
+.userMessage,
+.assistantMessage {
+  position: relative;
+
+  width: min(760px, 88%);
+
+  margin-bottom: 24px;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   USER MESSAGE
+========================================================= */
+
+.userMessage {
+  margin-left: auto;
+
+  padding: 13px 16px;
+
+  border-radius:
+    16px 16px 5px 16px;
+
+  background: var(--color-primary);
+
+  color: white;
+
+  box-shadow:
+    0 5px 18px
+    rgb(99 102 241 / 0.12);
+}
+
+/* =========================================================
+   ASSISTANT MESSAGE
+========================================================= */
+
+.assistantMessage {
+  margin-right: auto;
+
+  padding: 14px 16px;
+
+  border: 1px solid var(--color-border);
+
+  border-radius:
+    16px 16px 16px 5px;
+
+  background: var(--color-surface);
+
+  box-shadow:
+    0 4px 18px
+    rgb(15 23 42 / 0.025);
+}
+
+/* =========================================================
+   MESSAGE LABEL
+========================================================= */
+
+.userMessage span,
+.assistantMessage span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.02em;
+
+  opacity: 0.68;
+}
+
+.assistantMessage span {
+  color: var(--color-primary);
+
+  opacity: 1;
+}
+
+/* =========================================================
+   MESSAGE TEXT
+========================================================= */
+
+.userMessage p,
+.assistantMessage p {
+  margin: 0;
+
+  font-size: 14px;
+
+  line-height: 1.65;
+
+  word-break: break-word;
+}
+
+.userMessage p {
+  color: white;
+}
+
+.assistantMessage p {
+  color: var(--color-text-primary);
+}
+
+/* =========================================================
+   EMPTY CHAT
+========================================================= */
+
+.emptyChat {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100%;
+
+  padding: 40px 20px;
+
+  box-sizing: border-box;
+
+  text-align: center;
+}
+
+.aiIcon {
+  display: grid;
+  place-items: center;
+
+  width: 64px;
+  height: 64px;
+
+  margin-bottom: 20px;
+
+  border: 1px solid
+    rgb(99 102 241 / 0.12);
+
+  border-radius: 18px;
+
+  background:
+    rgb(99 102 241 / 0.08);
+
+  color: var(--color-primary);
+
+  box-shadow:
+    0 10px 30px
+    rgb(99 102 241 / 0.08);
+}
+
+.emptyChat h2 {
+  margin: 0;
+
+  color: var(--color-text-primary);
+
+  font-size: 25px;
+  font-weight: 700;
+
+  letter-spacing: -0.03em;
+}
+
+.emptyChat p {
+  width: 520px;
+  max-width: 100%;
+
+  margin: 10px 0 0;
+
+  color: var(--color-text-muted);
+
+  font-size: 14px;
+
+  line-height: 1.65;
+}
+
+/* =========================================================
+   COMPOSER
+========================================================= */
+
+.composer {
+  position: relative;
+
+  width: min(820px, calc(100% - 64px));
+
+  margin: 0 auto 22px;
+
+  flex-shrink: 0;
+}
+
+.composer textarea {
+  display: block;
+
+  width: 100%;
+
+  min-height: 68px;
+
+  padding:
+    16px
+    62px
+    30px
+    17px;
+
+  box-sizing: border-box;
+
+  resize: none;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: 16px;
+
+  outline: none;
+
+  background: var(--color-surface);
+
+  color: var(--color-text-primary);
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+
+  box-shadow:
+    0 8px 28px
+    rgb(15 23 42 / 0.07);
+
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.composer textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.composer textarea:focus {
+  border-color:
+    rgb(99 102 241 / 0.55);
+
+  box-shadow:
+    0 8px 28px
+    rgb(15 23 42 / 0.08),
+    0 0 0 3px
+    rgb(99 102 241 / 0.07);
+}
+
+/* =========================================================
+   SEND BUTTON
+========================================================= */
+
+.composer button {
+  position: absolute;
+
+  top: 11px;
+  right: 11px;
+
+  display: grid;
+  place-items: center;
+
+  width: 42px;
+  height: 42px;
+
+  border: 0;
+
+  border-radius: 10px;
+
+  background: var(--color-primary);
+
+  color: white;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 14px
+    rgb(99 102 241 / 0.18);
+
+  transition:
+    transform 150ms ease,
+    opacity 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.composer button:hover:not(:disabled) {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 7px 18px
+    rgb(99 102 241 / 0.24);
+}
+
+.composer button:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.composer button:disabled {
+  opacity: 0.35;
+
+  cursor: not-allowed;
+
+  box-shadow: none;
+}
+
+/* =========================================================
+   COMPOSER HINT
+========================================================= */
+
+.composer > span {
+  position: absolute;
+
+  left: 17px;
+  bottom: 8px;
+
+  color: var(--color-text-muted);
+
+  font-size: 10px;
+
+  line-height: 1.2;
+}
+
+/* =========================================================
+   NO ACTIVE CHAT
+========================================================= */
+
+.noChat {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+
+  padding: 40px;
+
+  color: var(--color-text-muted);
+
+  text-align: center;
+}
+
+.noChat svg {
+  color: var(--color-primary);
+
+  margin-bottom: 4px;
+}
+
+.noChat h2 {
+  margin: 12px 0 18px;
+
+  color: var(--color-text-primary);
+
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.noChat button {
+  height: 40px;
+
+  padding: 0 17px;
+
+  border: 0;
+
+  border-radius: 9px;
+
+  background: var(--color-primary);
+
+  color: white;
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    opacity 150ms ease,
+    transform 150ms ease;
+}
+
+.noChat button:hover {
+  opacity: 0.92;
+}
+
+.noChat button:active {
+  transform: scale(0.98);
+}
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.messages::-webkit-scrollbar {
+  width: 7px;
+}
+
+.messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+
+  background:
+    rgb(100 116 139 / 0.2);
+}
+
+.messages::-webkit-scrollbar-thumb:hover {
+  background:
+    rgb(100 116 139 / 0.35);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+  .header {
+    padding: 0 24px;
+  }
+
+  .messages {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .composer {
+    width: min(
+      820px,
+      calc(100% - 48px)
+    );
+  }
+
+  .headerActions {
+    gap: 8px;
+  }
+
+  .projectSelector label {
+    display: none;
+  }
+
+  .projectSelector select {
+    min-width: 145px;
+  }
+}
+
+@media (max-width: 800px) {
+  .header {
+    min-height: 70px;
+
+    padding: 0 18px;
+  }
+
+  .headerInfo h1 {
+    max-width: 220px;
+
+    font-size: 17px;
+  }
+
+  .agentBadge span {
+    display: none;
+  }
+
+  .agentBadge {
+    width: 38px;
+
+    justify-content: center;
+
+    padding: 0;
+  }
+
+  .projectSelector select {
+    min-width: 125px;
+  }
+
+  .messages {
+    padding:
+      24px
+      18px
+      110px;
+  }
+
+  .userMessage,
+  .assistantMessage {
+    width: 92%;
+  }
+
+  .composer {
+    width: calc(100% - 32px);
+
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    align-items: center;
+  }
+
+  .headerActions {
+    margin-left: 10px;
+  }
+
+  .projectSelector {
+    display: none;
+  }
+
+  .headerInfo h1 {
+    max-width: 180px;
+  }
+
+  .messages {
+    padding:
+      20px
+      14px
+      100px;
+  }
+
+  .userMessage,
+  .assistantMessage {
+    width: 94%;
+
+    margin-bottom: 18px;
+
+    padding: 12px 14px;
+  }
+
+  .userMessage p,
+  .assistantMessage p {
+    font-size: 13px;
+  }
+
+  .emptyChat h2 {
+    font-size: 21px;
+  }
+
+  .emptyChat p {
+    font-size: 13px;
+  }
+
+  .composer {
+    width: calc(100% - 20px);
+
+    margin-bottom: 10px;
+  }
+
+  .composer textarea {
+    min-height: 62px;
+
+    padding:
+      14px
+      56px
+      28px
+      14px;
+
+    border-radius: 14px;
+
+    font-size: 13px;
+  }
+
+  .composer button {
+    width: 38px;
+    height: 38px;
+
+    top: 9px;
+    right: 9px;
+  }
+
+  .composer > span {
+    left: 14px;
+
+    font-size: 9px;
+  }
+}

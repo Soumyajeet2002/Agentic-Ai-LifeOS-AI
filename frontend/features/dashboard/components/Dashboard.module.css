@@ -1,0 +1,676 @@
+/* ========================================
+   DASHBOARD PAGE
+======================================== */
+
+.page {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 36px 48px 64px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+  position: relative;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  min-height: 190px;
+
+  padding: 36px 38px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+
+  background:
+    radial-gradient(circle at 20% 0%,
+      rgb(99 102 241 / 0.1),
+      transparent 42%),
+    radial-gradient(circle at 80% 100%,
+      rgb(20 184 166 / 0.07),
+      transparent 40%),
+    var(--color-surface);
+
+  box-shadow:
+    0 20px 60px rgb(15 23 42 / 0.045);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+}
+
+.heroGlow {
+  position: absolute;
+
+  top: -180px;
+  left: 18%;
+
+  width: 260px;
+  height: 260px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle,
+      rgb(99 102 241 / 0.14),
+      transparent 68%);
+
+  filter: blur(10px);
+
+  animation: heroGlow 7s ease-in-out infinite;
+}
+
+/* ========================================
+   HERO TEXT
+======================================== */
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 13px;
+
+  color: var(--color-primary);
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.15em;
+}
+
+.eyebrowDot {
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--color-primary);
+
+  box-shadow:
+    0 0 0 4px rgb(99 102 241 / 0.1);
+}
+
+.hero h1 {
+  margin: 0;
+
+  color: var(--color-text-primary);
+
+  font-size: clamp(34px, 4vw, 48px);
+  font-weight: 700;
+
+  line-height: 1.05;
+
+  letter-spacing: -0.055em;
+}
+
+.wave {
+  display: inline-block;
+
+  margin-left: 10px;
+
+  transform-origin: 70% 70%;
+
+  animation: wave 2.8s ease-in-out infinite;
+}
+
+.subtitle {
+  max-width: 580px;
+
+  margin: 14px 0 0;
+
+  color: var(--color-text-secondary);
+
+  font-size: 15px;
+
+  line-height: 1.6;
+}
+
+/* ========================================
+   AI STATUS
+======================================== */
+
+.aiStatus {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 9px 14px;
+
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+
+  background: rgb(255 255 255 / 0.65);
+
+  color: var(--color-text-secondary);
+
+  font-size: 12px;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  backdrop-filter: blur(10px);
+}
+
+.statusPulse {
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--color-success);
+
+  box-shadow:
+    0 0 0 4px rgb(16 185 129 / 0.09);
+
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+/* ========================================
+   AI INPUT SECTION
+======================================== */
+
+.aiSection {
+  width: 100%;
+  max-width: 920px;
+}
+
+.aiHint {
+  margin: 11px 0 0 16px;
+
+  color: var(--color-text-muted);
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+/* ========================================
+   SUMMARY GRID
+======================================== */
+
+.summaryGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+/* ========================================
+   SUMMARY CARD
+======================================== */
+
+.summaryCard {
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 15px;
+
+  min-height: 140px;
+
+  padding: 20px;
+
+  overflow: hidden;
+
+  cursor: pointer;
+}
+
+.summaryCard::after {
+  position: absolute;
+
+  inset: 0;
+
+  content: "";
+
+  background:
+    radial-gradient(circle at 100% 0%,
+      rgb(99 102 241 / 0.06),
+      transparent 45%);
+
+  opacity: 0;
+
+  transition:
+    opacity var(--motion-normal) var(--ease-standard);
+
+  pointer-events: none;
+}
+
+.summaryCard:hover::after {
+  opacity: 1;
+}
+
+/* ========================================
+   SUMMARY ICON
+======================================== */
+
+.summaryIcon {
+  display: grid;
+  place-items: center;
+
+  width: 44px;
+  height: 44px;
+
+  flex-shrink: 0;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(135deg,
+      rgb(99 102 241 / 0.1),
+      rgb(139 92 246 / 0.07));
+
+  color: var(--color-primary);
+
+  transition:
+    transform var(--motion-normal) var(--ease-standard),
+    background var(--motion-normal) var(--ease-standard);
+}
+
+.summaryCard:hover .summaryIcon {
+  transform: scale(1.06) rotate(-3deg);
+
+  background:
+    linear-gradient(135deg,
+      rgb(99 102 241 / 0.15),
+      rgb(139 92 246 / 0.11));
+}
+
+/* ========================================
+   SUMMARY TEXT
+======================================== */
+
+.summaryCard p {
+  margin: 1px 0 4px;
+
+  color: var(--color-text-muted);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.01em;
+}
+
+.summaryCard strong {
+  display: block;
+
+  color: var(--color-text-primary);
+
+  font-size: 27px;
+  font-weight: 700;
+
+  line-height: 1.1;
+
+  letter-spacing: -0.04em;
+}
+
+.summaryCard span {
+  display: block;
+
+  margin-top: 6px;
+
+  color: var(--color-text-muted);
+
+  font-size: 11px;
+
+  line-height: 1.4;
+}
+
+.summaryCard small {
+  display: inline-flex;
+
+  margin-top: 10px;
+
+  color: var(--color-primary);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  opacity: 0;
+
+  transform: translateY(4px);
+
+  transition:
+    opacity var(--motion-fast) var(--ease-standard),
+    transform var(--motion-fast) var(--ease-standard);
+}
+
+.summaryCard:hover small {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+/* ========================================
+   CONTENT GRID
+======================================== */
+
+.contentGrid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.35fr) minmax(0, 1fr);
+
+  gap: 18px;
+}
+
+/* ========================================
+   GOAL / ACTIVITY CARDS
+======================================== */
+
+.goalCard,
+.activityCard {
+  padding: 24px;
+}
+
+/* ========================================
+   CARD HEADER
+======================================== */
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 18px;
+}
+
+.cardLabel {
+  margin: 0 0 8px;
+
+  color: var(--color-text-muted);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+}
+
+.cardHeader h2 {
+  margin: 0;
+
+  color: var(--color-text-primary);
+
+  font-size: 19px;
+  font-weight: 700;
+
+  line-height: 1.35;
+
+  letter-spacing: -0.025em;
+}
+
+/* ========================================
+   GOAL PROGRESS
+======================================== */
+
+.goalProgress {
+  margin-top: 30px;
+}
+
+.goalProgress>div:first-child {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  margin-bottom: 11px;
+}
+
+.goalProgress strong {
+  color: var(--color-text-primary);
+
+  font-size: 32px;
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: -0.04em;
+}
+
+.goalProgress span {
+  color: var(--color-text-muted);
+
+  font-size: 12px;
+}
+
+/* ========================================
+   NEXT ACTION
+======================================== */
+
+.nextAction {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  margin-top: 24px;
+
+  padding: 15px;
+
+  border-radius: 12px;
+
+  background: var(--color-border-subtle);
+}
+
+.nextAction span {
+  color: var(--color-text-muted);
+
+  font-size: 11px;
+}
+
+.nextAction strong {
+  color: var(--color-text-primary);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+/* ========================================
+   ACTIVITY
+======================================== */
+
+.activity {
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+
+  margin-top: 28px;
+}
+
+.activity div {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: var(--color-text-secondary);
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+.activity div svg {
+  flex-shrink: 0;
+
+  color: var(--color-success);
+}
+
+.activity .active {
+  color: var(--color-primary);
+}
+
+.activity .active svg {
+  color: var(--color-primary);
+}
+
+/* ========================================
+   ANIMATIONS
+======================================== */
+
+@keyframes heroGlow {
+
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: translate3d(70px, 30px, 0);
+
+    opacity: 1;
+  }
+}
+
+@keyframes wave {
+
+  0%,
+  60%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  10%,
+  30% {
+    transform: rotate(14deg);
+  }
+
+  20%,
+  40% {
+    transform: rotate(-8deg);
+  }
+}
+
+@keyframes statusPulse {
+
+  0%,
+  100% {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.45;
+
+    transform: scale(0.8);
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.45;
+
+    transform: scale(0.8);
+  }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .heroGlow,
+  .wave,
+  .statusPulse,
+  .pulse {
+    animation: none;
+  }
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1050px) {
+  .summaryGrid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+  .page {
+    gap: 20px;
+  }
+
+  .hero {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    min-height: auto;
+
+    padding: 28px 24px;
+
+    gap: 28px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .aiStatus {
+    align-self: flex-start;
+  }
+
+  .summaryGrid {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .summaryCard {
+    min-height: 125px;
+  }
+
+  .goalCard,
+  .activityCard {
+    padding: 20px;
+  }
+
+  .cardHeader h2 {
+    font-size: 17px;
+  }
+}

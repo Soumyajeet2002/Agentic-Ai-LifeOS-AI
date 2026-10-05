@@ -6,7 +6,7 @@ import { ChatList } from "@/features/chats/components/ChatList";
 import { mockChats } from "@/features/chats/data/mockChats";
 import { mockProjects } from "@/features/projects/data/mockProjects";
 import type { Chat, ChatMessage } from "@/features/chats/types/chat";
-import styles from "./page.module.css";
+import styles from "./Chats.module.css";
 
 export default function ChatsPage() {
   const [chats, setChats] = useState<Chat[]>(mockChats);

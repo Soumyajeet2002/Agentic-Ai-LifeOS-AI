@@ -9,7 +9,7 @@ import { Progress } from "@/components/ui/Progress";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 
-import styles from "./page.module.css";
+import styles from "./Dashboard.module.css";
 
 const summary = [
   {

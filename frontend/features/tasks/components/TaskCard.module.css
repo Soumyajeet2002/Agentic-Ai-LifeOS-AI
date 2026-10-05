@@ -1,232 +1,339 @@
 .card {
-    display: flex;
-    gap: 13px;
-  
-    padding: 16px;
-  
-    border: 1px solid var(--color-border);
-    border-radius: 13px;
-  
-    background: var(--color-surface);
-  
-    transition:
-      border-color 160ms ease,
-      background 160ms ease;
-  }
-  
-  .card:hover {
-    border-color: rgb(99 102 241 / 0.25);
-  }
-  
-  .checkbox {
-    display: grid;
-    place-items: center;
-  
-    width: 22px;
-    height: 22px;
-  
-    flex-shrink: 0;
-  
-    margin-top: 1px;
-  
-    padding: 0;
-  
-    border: 1px solid var(--color-border);
-    border-radius: 7px;
-  
-    background: transparent;
-  
-    color: var(--color-text-muted);
-  
-    cursor: pointer;
-  }
-  
-  .checkbox:hover {
-    border-color: var(--color-primary);
-    color: var(--color-primary);
-  }
-  
-  .content {
-    min-width: 0;
-    flex: 1;
-  }
-  
-  .titleRow {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  
+  display: flex;
+  gap: 16px;
+
+  padding: 20px;
+
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+
+  background: var(--color-surface);
+
+  transition:
+    border-color 160ms ease,
+    background 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.card:hover {
+  border-color: rgb(99 102 241 / 0.25);
+
+  box-shadow:
+    0 5px 18px rgb(15 23 42 / 0.05);
+
+  transform: translateY(-1px);
+}
+
+/* =========================
+   CHECKBOX
+========================= */
+
+.checkbox {
+  display: grid;
+  place-items: center;
+
+  width: 24px;
+  height: 24px;
+
+  flex-shrink: 0;
+
+  margin-top: 1px;
+
+  padding: 0;
+
+  border: 1px solid var(--color-border);
+  border-radius: 7px;
+
+  background: transparent;
+
+  color: var(--color-text-muted);
+
+  cursor: pointer;
+
+  transition:
+    border-color 160ms ease,
+    background 160ms ease,
+    color 160ms ease;
+}
+
+.checkbox:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+  min-width: 0;
+  flex: 1;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 14px;
+}
+
+.titleRow h3 {
+  margin: 0;
+
+  color: var(--color-text-primary);
+
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 650;
+
+  letter-spacing: -0.01em;
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.description {
+  margin: 7px 0 0;
+
+  max-width: 760px;
+
+  color: var(--color-text-muted);
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* =========================
+   PRIORITY
+========================= */
+
+.priority {
+  flex-shrink: 0;
+
+  padding: 5px 9px;
+
+  border-radius: 6px;
+
+  font-size: 10px;
+  line-height: 1.3;
+  font-weight: 750;
+
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.high {
+  background: rgb(239 68 68 / 0.08);
+  color: var(--color-error);
+}
+
+.medium {
+  background: rgb(245 158 11 / 0.09);
+  color: var(--color-warning);
+}
+
+.low {
+  background: rgb(100 116 139 / 0.09);
+  color: var(--color-text-muted);
+}
+
+/* =========================
+   META
+========================= */
+
+.meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 13px;
+
+  margin-top: 13px;
+
+  color: var(--color-text-muted);
+
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.goal,
+.dueDate,
+.inProgress {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 5px;
+}
+
+.inProgress {
+  color: var(--color-primary);
+}
+
+/* =========================
+   COMPLETED
+========================= */
+
+.completed {
+  opacity: 0.65;
+}
+
+.completed h3 {
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+}
+
+.completed .checkbox {
+  border-color: var(--color-success);
+
+  background: rgb(16 185 129 / 0.08);
+
+  color: var(--color-success);
+}
+
+/* =========================
+   ACTIONS
+========================= */
+
+.actions {
+  position: relative;
+
+  align-self: flex-start;
+}
+
+.actions > button {
+  display: grid;
+  place-items: center;
+
+  width: 32px;
+  height: 32px;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: var(--color-text-muted);
+
+  cursor: pointer;
+
+  transition:
+    background 160ms ease,
+    color 160ms ease;
+}
+
+.actions > button:hover {
+  background: var(--color-background);
+
+  color: var(--color-text-primary);
+}
+
+/* =========================
+   MENU
+========================= */
+
+.menu {
+  position: absolute;
+
+  right: 0;
+  top: 36px;
+
+  z-index: 10;
+
+  display: none;
+
+  min-width: 125px;
+
+  padding: 6px;
+
+  border: 1px solid var(--color-border);
+  border-radius: 9px;
+
+  background: var(--color-surface);
+
+  box-shadow:
+    0 10px 30px rgb(15 23 42 / 0.12);
+}
+
+.actions:hover .menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu button {
+  padding: 8px 10px;
+
+  border: 0;
+  border-radius: 6px;
+
+  background: transparent;
+
+  color: var(--color-text-secondary);
+
+  text-align: left;
+
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 1.4;
+
+  cursor: pointer;
+
+  transition:
+    background 160ms ease,
+    color 160ms ease;
+}
+
+.menu button:hover {
+  background: var(--color-background);
+
+  color: var(--color-text-primary);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 640px) {
+  .card {
     gap: 12px;
-  }
-  
-  .titleRow h3 {
-    margin: 0;
-  
-    color: var(--color-text-primary);
-  
-    font-size: 12px;
-    font-weight: 650;
-  
-    letter-spacing: -0.01em;
-  }
-  
-  .description {
-    margin: 5px 0 0;
-  
-    color: var(--color-text-muted);
-  
-    font-size: 10px;
-    line-height: 1.5;
-  }
-  
-  .priority {
-    flex-shrink: 0;
-  
-    padding: 3px 6px;
-  
-    border-radius: 5px;
-  
-    font-size: 7px;
-    font-weight: 750;
-  
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-  }
-  
-  .high {
-    background: rgb(239 68 68 / 0.08);
-    color: var(--color-error);
-  }
-  
-  .medium {
-    background: rgb(245 158 11 / 0.09);
-    color: var(--color-warning);
-  }
-  
-  .low {
-    background: rgb(100 116 139 / 0.09);
-    color: var(--color-text-muted);
-  }
-  
-  .meta {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-  
-    gap: 10px;
-  
-    margin-top: 11px;
-  
-    color: var(--color-text-muted);
-  
-    font-size: 8px;
-  }
-  
-  .goal,
-  .dueDate,
-  .inProgress {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-  }
-  
-  .inProgress {
-    color: var(--color-primary);
-  }
-  
-  .completed {
-    opacity: 0.65;
-  }
-  
-  .completed h3 {
-    color: var(--color-text-muted);
-    text-decoration: line-through;
-  }
-  
-  .completed .checkbox {
-    border-color: var(--color-success);
-  
-    background: rgb(16 185 129 / 0.08);
-  
-    color: var(--color-success);
+    padding: 16px;
   }
 
-  .actions {
-    position: relative;
-  
-    align-self: flex-start;
+  .titleRow {
+    align-items: flex-start;
   }
-  
-  .actions > button {
-    display: grid;
-    place-items: center;
-  
-    width: 28px;
-    height: 28px;
-  
-    border: 0;
-    border-radius: 7px;
-  
-    background: transparent;
-  
-    color: var(--color-text-muted);
-  
-    cursor: pointer;
+
+  .titleRow h3 {
+    font-size: 14px;
   }
-  
-  .actions > button:hover {
-    background: var(--color-background);
-    color: var(--color-text-primary);
+
+  .description {
+    font-size: 12px;
   }
-  
-  .menu {
-    position: absolute;
-    right: 0;
-    top: 32px;
-  
-    z-index: 10;
-  
-    display: none;
-  
-    min-width: 100px;
-  
-    padding: 5px;
-  
-    border: 1px solid var(--color-border);
-    border-radius: 9px;
-  
-    background: var(--color-surface);
-  
-    box-shadow:
-      0 8px 25px rgb(15 23 42 / 0.1);
-  }
-  
-  .actions:hover .menu {
-    display: flex;
-  
-    flex-direction: column;
-  }
-  
-  .menu button {
-    padding: 7px 9px;
-  
-    border: 0;
-    border-radius: 6px;
-  
-    background: transparent;
-  
-    color: var(--color-text-secondary);
-  
-    text-align: left;
-  
-    font-family: inherit;
+
+  .priority {
+    padding: 4px 7px;
     font-size: 9px;
-  
-    cursor: pointer;
   }
-  
-  .menu button:hover {
-    background: var(--color-background);
-  
-    color: var(--color-text-primary);
+
+  .meta {
+    gap: 9px;
+    font-size: 10px;
   }
+
+  .checkbox {
+    width: 22px;
+    height: 22px;
+  }
+
+  .actions > button {
+    width: 30px;
+    height: 30px;
+  }
+}

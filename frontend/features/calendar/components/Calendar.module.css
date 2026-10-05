@@ -1,0 +1,608 @@
+.page {
+  width: 100%;
+  max-width: 1500px;
+
+  margin: 0 auto;
+
+  padding: 36px 48px 64px;
+
+  box-sizing: border-box;
+}
+
+/* =========================
+   Header
+========================= */
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 32px;
+
+  margin-bottom: 30px;
+}
+
+.eyebrow {
+  margin: 0 0 9px;
+
+  color: var(--color-primary);
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+}
+
+.header h1 {
+  margin: 0;
+
+  color: var(--color-text-primary);
+
+  font-size: 32px;
+  font-weight: 700;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.045em;
+}
+
+.description {
+  margin: 10px 0 0;
+
+  color: var(--color-text-secondary);
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+/* =========================
+   Create Button
+========================= */
+
+.createButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  height: 42px;
+
+  padding: 0 17px;
+
+  flex-shrink: 0;
+
+  border: 1px solid var(--color-primary);
+  border-radius: 9px;
+
+  background: var(--color-primary);
+
+  color: white;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    opacity 150ms ease,
+    transform 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.createButton:hover {
+  opacity: 0.94;
+
+  box-shadow:
+    0 8px 20px
+    rgb(99 102 241 / 0.18);
+}
+
+.createButton:active {
+  transform: scale(0.98);
+}
+
+/* =========================
+   Toolbar
+========================= */
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 58px;
+
+  margin-bottom: 18px;
+
+  padding: 9px 12px;
+
+  box-sizing: border-box;
+
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+
+  background: var(--color-surface);
+
+  box-shadow:
+    0 8px 24px
+    rgb(15 23 42 / 0.035);
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+}
+
+.navigation button {
+  display: grid;
+  place-items: center;
+
+  width: 35px;
+  height: 35px;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: var(--color-text-muted);
+
+  cursor: pointer;
+
+  transition:
+    background 150ms ease,
+    color 150ms ease;
+}
+
+.navigation button:hover {
+  background: var(--color-background);
+
+  color: var(--color-text-primary);
+}
+
+.navigation .today {
+  width: auto;
+
+  padding: 0 13px;
+
+  font-family: inherit;
+
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.monthLabel {
+  color: var(--color-text-primary);
+
+  font-size: 16px;
+  font-weight: 650;
+
+  letter-spacing: -0.015em;
+}
+
+/* =========================
+   Calendar
+========================= */
+
+.calendar {
+  width: 100%;
+
+  overflow: hidden;
+
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+
+  background: var(--color-surface);
+
+  box-shadow:
+    0 10px 30px
+    rgb(15 23 42 / 0.035);
+}
+
+/* =========================
+   Week Days
+========================= */
+
+.weekDays {
+  display: grid;
+
+  grid-template-columns:
+    repeat(7, minmax(0, 1fr));
+
+  border-bottom:
+    1px solid var(--color-border);
+}
+
+.weekDays div {
+  padding: 13px 14px;
+
+  color: var(--color-text-muted);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-align: right;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.06em;
+}
+
+/* =========================
+   Calendar Grid
+========================= */
+
+.calendarGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(7, minmax(0, 1fr));
+}
+
+/* =========================
+   Calendar Day
+========================= */
+
+.day {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 135px;
+
+  padding: 10px;
+
+  box-sizing: border-box;
+
+  border: 0;
+  border-right:
+    1px solid var(--color-border);
+  border-bottom:
+    1px solid var(--color-border);
+
+  background: var(--color-surface);
+
+  font-family: inherit;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 150ms ease;
+}
+
+.day:hover {
+  background: var(--color-background);
+}
+
+.day:nth-child(7n) {
+  border-right: 0;
+}
+
+.day:nth-last-child(-n + 7) {
+  border-bottom: 0;
+}
+
+/* =========================
+   Day Number
+========================= */
+
+.dayNumber {
+  display: grid;
+  place-items: center;
+
+  width: 29px;
+  height: 29px;
+
+  margin-left: auto;
+
+  border-radius: 50%;
+
+  color: var(--color-text-secondary);
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* =========================
+   Today
+========================= */
+
+.todayDay .dayNumber {
+  background: var(--color-primary);
+
+  color: white;
+
+  font-weight: 700;
+}
+
+/* =========================
+   Selected Day
+========================= */
+
+.selectedDay {
+  background:
+    rgb(99 102 241 / 0.035);
+}
+
+.selectedDay::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  border: 2px solid
+    rgb(99 102 241 / 0.22);
+
+  pointer-events: none;
+}
+
+/* =========================
+   Other Month
+========================= */
+
+.otherMonth {
+  background:
+    rgb(15 23 42 / 0.012);
+}
+
+.otherMonth .dayNumber {
+  color: var(--color-text-muted);
+
+  opacity: 0.55;
+}
+
+/* =========================
+   Events
+========================= */
+
+.dayEvents {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  margin-top: 7px;
+}
+
+.event {
+  width: 100%;
+
+  padding: 6px 8px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  border-radius: 6px;
+
+  background:
+    rgb(99 102 241 / 0.09);
+
+  color: var(--color-primary);
+
+  font-size: 10px;
+  font-weight: 600;
+
+  line-height: 1.35;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+.moreEvents {
+  color: var(--color-text-muted);
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* =========================
+   Selected Schedule
+========================= */
+
+.schedule {
+  margin-top: 28px;
+}
+
+.scheduleHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 14px;
+}
+
+.sectionLabel {
+  margin: 0 0 5px;
+
+  color: var(--color-primary);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+}
+
+.scheduleHeader h2 {
+  margin: 0;
+
+  color: var(--color-text-primary);
+
+  font-size: 18px;
+  font-weight: 650;
+
+  letter-spacing: -0.02em;
+}
+
+.scheduleHeader > span {
+  color: var(--color-text-muted);
+
+  font-size: 12px;
+}
+
+/* =========================
+   Selected Events
+========================= */
+
+.events {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+/* =========================
+   Empty State
+========================= */
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 220px;
+
+  padding: 32px;
+
+  box-sizing: border-box;
+
+  border:
+    1px dashed var(--color-border);
+
+  border-radius: 14px;
+
+  background: var(--color-surface);
+
+  text-align: center;
+}
+
+.empty h3 {
+  margin: 0;
+
+  color: var(--color-text-primary);
+
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.empty p {
+  margin: 7px 0 0;
+
+  color: var(--color-text-muted);
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (min-width: 1600px) {
+  .page {
+    max-width: 1580px;
+
+    padding-left: 56px;
+    padding-right: 56px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .page {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .day {
+    min-height: 115px;
+
+    padding: 8px;
+  }
+
+  .event {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 700px) {
+  .page {
+    padding: 26px 20px 44px;
+  }
+
+  .header {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 20px;
+  }
+
+  .header h1 {
+    font-size: 28px;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+
+  .createButton {
+    width: 100%;
+  }
+
+  .toolbar {
+    min-height: auto;
+
+    padding: 10px;
+  }
+
+  .monthLabel {
+    font-size: 14px;
+  }
+
+  .weekDays div {
+    padding: 10px 4px;
+
+    font-size: 9px;
+
+    text-align: center;
+  }
+
+  .day {
+    min-height: 85px;
+
+    padding: 6px;
+  }
+
+  .dayNumber {
+    width: 24px;
+    height: 24px;
+
+    font-size: 10px;
+  }
+
+  .event {
+    padding: 4px 5px;
+
+    font-size: 8px;
+  }
+
+  .moreEvents {
+    font-size: 8px;
+  }
+
+  .schedule {
+    margin-top: 20px;
+  }
+}

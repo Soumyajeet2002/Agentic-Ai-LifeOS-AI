@@ -1,30 +1,23 @@
 "use client";
+import { Sidebar } from "./Sidebar";
 
-import { ReactNode } from "react";
-
-import { Header } from "./Header";
-import { Sidebar } from "@/components/navigation/Sidebar";
+import { WorkspaceRenderer } from "./WorkspaceRenderer";
+import { SettingsModal } from "../modals/SettingsModal";
+import { ProfileModal } from "../modals/ProfileModal";
 
 import styles from "./AppShell.module.css";
 
-interface AppShellProps {
-  children: ReactNode;
-}
-
-export function AppShell({
-  children,
-}: AppShellProps) {
+export function AppShell() {
   return (
-    <div className={styles.shell}>
-      <Sidebar />
+      <div className={styles.shell}>
+          <Sidebar />
 
-      <div className={styles.main}>
-        <Header />
+          <main className={styles.workspace}>
+              <WorkspaceRenderer />
+          </main>
 
-        <main className={styles.content}>
-          {children}
-        </main>
+          <SettingsModal />
+          <ProfileModal />
       </div>
-    </div>
   );
 }

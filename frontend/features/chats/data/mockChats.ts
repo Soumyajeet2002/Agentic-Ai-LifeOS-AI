@@ -3,6 +3,7 @@ import type { Chat } from "../types/chat";
 export const mockChats: Chat[] = [
   {
     id: "chat-1",
+    projectId: "project-1",
     title: "Build my personal website",
     messages: [
       {
@@ -31,6 +32,7 @@ export const mockChats: Chat[] = [
 
   {
     id: "chat-2",
+    projectId: "project-2",
     title: "Python learning plan",
     messages: [
       {

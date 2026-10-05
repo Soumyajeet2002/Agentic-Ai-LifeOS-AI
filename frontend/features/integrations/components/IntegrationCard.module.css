@@ -1,165 +1,318 @@
 .card {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
   
-    min-height: 250px;
+  min-height: 285px;
   
-    padding: 17px;
+  padding: 21px;
   
-    border: 1px solid var(--color-border);
-    border-radius: 13px;
+  box-sizing: border-box;
   
-    background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 15px;
+  
+  background: var(--color-surface);
+  
+  box-shadow:
+  0 3px 12px rgb(15 23 42 / 0.025);
+  
+  transition:
+  transform 150ms ease,
+  border-color 150ms ease,
+  box-shadow 150ms ease;
   }
   
+  .card:hover {
+  transform: translateY(-2px);
+  
+  border-color: rgb(99 102 241 / 0.18);
+  
+  box-shadow:
+  0 10px 28px rgb(15 23 42 / 0.07);
+  }
+  
+  /* =========================
+  TOP
+  ========================= */
+  
   .top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   }
   
   .logo {
-    display: grid;
-    place-items: center;
+  display: grid;
+  place-items: center;
   
-    width: 36px;
-    height: 36px;
+  width: 42px;
+  height: 42px;
   
-    border-radius: 9px;
+  flex-shrink: 0;
   
-    background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: 11px;
   
-    color: var(--color-text-primary);
+  background: var(--color-background);
   
-    font-size: 13px;
-    font-weight: 750;
+  color: var(--color-text-primary);
+  
+  font-size: 15px;
+  font-weight: 750;
   }
+  
+  /* =========================
+  STATUS
+  ========================= */
   
   .status {
-    display: inline-flex;
-    align-items: center;
+  display: inline-flex;
+  align-items: center;
   
-    gap: 4px;
+  gap: 5px;
   
-    color: var(--color-text-muted);
+  color: var(--color-text-muted);
   
-    font-size: 8px;
-    font-weight: 650;
+  font-size: 11px;
+  font-weight: 600;
   }
   
+  .status svg {
+  width: 12px;
+  height: 12px;
+  }
+  
+  /* =========================
+  BODY
+  ========================= */
+  
   .body {
-    margin-top: 15px;
+  margin-top: 19px;
   }
   
   .body h3 {
-    margin: 0;
+  margin: 0;
   
-    color: var(--color-text-primary);
+  color: var(--color-text-primary);
   
-    font-size: 12px;
-    font-weight: 650;
+  font-size: 17px;
+  font-weight: 700;
+  
+  line-height: 1.35;
+  
+  letter-spacing: -0.02em;
   }
   
   .body p {
-    margin: 7px 0 0;
+  margin: 8px 0 0;
   
-    color: var(--color-text-secondary);
+  color: var(--color-text-secondary);
   
-    font-size: 9px;
-    line-height: 1.55;
+  font-size: 13px;
+  line-height: 1.65;
   }
   
+  /* =========================
+  PERMISSIONS
+  ========================= */
+  
   .permissions {
-    margin-top: 14px;
+  margin-top: 17px;
   
-    padding: 10px;
+  padding: 12px 13px;
   
-    border-radius: 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
   
-    background: var(--color-background);
+  background: var(--color-background);
   }
   
   .permissionHeader {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
   
-    gap: 5px;
+  gap: 7px;
   
-    color: var(--color-text-secondary);
+  color: var(--color-text-secondary);
   
-    font-size: 8px;
-    font-weight: 650;
+  font-size: 11px;
+  font-weight: 650;
   }
   
   .permissionHeader svg {
-    color: var(--color-primary);
+  width: 14px;
+  height: 14px;
+  
+  flex-shrink: 0;
+  
+  color: var(--color-primary);
   }
   
   .permissions ul {
-    margin: 7px 0 0;
-    padding-left: 16px;
+  margin: 8px 0 0;
+  padding-left: 18px;
   
-    color: var(--color-text-muted);
+  color: var(--color-text-muted);
   
-    font-size: 8px;
+  font-size: 11px;
   
-    line-height: 1.7;
+  line-height: 1.65;
   }
   
-  .footer {
-    display: flex;
+  .permissions li::marker {
+  color: var(--color-primary);
+  }
   
-    margin-top: auto;
-    padding-top: 16px;
+  /* =========================
+  FOOTER
+  ========================= */
+  
+  .footer {
+  display: flex;
+  
+  margin-top: auto;
+  padding-top: 19px;
   }
   
   .footer button {
-    width: 100%;
-    height: 32px;
+  width: 100%;
+  height: 38px;
   
-    border-radius: 8px;
+  border-radius: 9px;
   
-    font-family: inherit;
-    font-size: 9px;
-    font-weight: 650;
+  font-family: inherit;
   
-    cursor: pointer;
+  font-size: 12px;
+  font-weight: 650;
+  
+  cursor: pointer;
+  
+  transition:
+  opacity 150ms ease,
+  transform 150ms ease,
+  box-shadow 150ms ease;
   }
+  
+  .footer button:active {
+  transform: scale(0.98);
+  }
+  
+  /* =========================
+  CONNECT
+  ========================= */
   
   .connect {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
-    gap: 5px;
+  gap: 7px;
   
-    border: 1px solid var(--color-primary);
+  border: 1px solid var(--color-primary);
   
-    background: var(--color-primary);
+  background: var(--color-primary);
   
-    color: white;
+  color: white;
+  
+  box-shadow:
+  0 4px 12px rgb(99 102 241 / 0.12);
   }
   
+  .connect:hover {
+  opacity: 0.93;
+  
+  box-shadow:
+  0 6px 16px rgb(99 102 241 / 0.18);
+  }
+  
+  /* =========================
+  DISCONNECT
+  ========================= */
+  
   .disconnect {
-    border: 1px solid var(--color-border);
+  border: 1px solid var(--color-border);
   
-    background: transparent;
+  background: transparent;
   
-    color: var(--color-text-secondary);
+  color: var(--color-text-secondary);
   }
   
   .disconnect:hover {
-    border-color: var(--color-error);
+  border-color: var(--color-error);
   
-    color: var(--color-error);
+  color: var(--color-error);
+  
+  background: rgb(239 68 68 / 0.03);
   }
+  
+  /* =========================
+  DISABLED
+  ========================= */
   
   .disabled {
-    border: 1px solid var(--color-border);
+  border: 1px solid var(--color-border);
   
-    background: var(--color-background);
+  background: var(--color-background);
   
-    color: var(--color-text-muted);
+  color: var(--color-text-muted);
   
-    cursor: not-allowed !important;
+  cursor: not-allowed !important;
   }
+  
+  /* =========================
+  RESPONSIVE
+  ========================= */
+  
+  @media (max-width: 800px) {
+  .card {
+  min-height: 270px;
+  padding: 19px;
+  }
+  
+  .body h3 {
+  font-size: 16px;
+  }
+  
+  .body p {
+  font-size: 13px;
+  }
+  }
+  
+  @media (max-width: 600px) {
+  .card {
+  min-height: auto;
+  padding: 18px;
+  border-radius: 13px;
+  }
+  
+  .logo {
+  width: 40px;
+  height: 40px;
+  }
+  
+  .body {
+  margin-top: 17px;
+  }
+  
+  .body h3 {
+  font-size: 16px;
+  }
+  
+  .body p {
+  font-size: 13px;
+  }
+  
+  .permissions {
+  padding: 11px 12px;
+  }
+  
+  .permissions ul {
+  font-size: 11px;
+  }
+  
+  .footer button {
+  height: 38px;
+  }
+  }
+  

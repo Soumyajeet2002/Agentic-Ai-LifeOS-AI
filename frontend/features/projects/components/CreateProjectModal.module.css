@@ -1,206 +1,333 @@
+/* =========================
+   OVERLAY
+========================= */
+
 .overlay {
-    position: fixed;
-  
-    inset: 0;
-  
-    z-index: 100;
-  
-    display: grid;
-    place-items: center;
-  
-    padding: 20px;
-  
-    background: rgb(15 23 42 / 0.35);
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 100;
+
+  display: grid;
+  place-items: center;
+
+  padding: 24px;
+
+  background: rgb(15 23 42 / 0.35);
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+  width: min(520px, 100%);
+
+  max-height: calc(100vh - 48px);
+
+  overflow: hidden;
+
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+
+  background: var(--color-surface);
+
+  box-shadow:
+    0 24px 70px rgb(15 23 42 / 0.18);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  padding: 24px;
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header > div {
+  min-width: 0;
+}
+
+.header > div > span {
+  color: var(--color-primary);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.13em;
+}
+
+.header h2 {
+  margin: 7px 0 0;
+
+  color: var(--color-text-primary);
+
+  font-size: 22px;
+  font-weight: 700;
+
+  letter-spacing: -0.02em;
+}
+
+.header p {
+  max-width: 420px;
+
+  margin: 7px 0 0;
+
+  color: var(--color-text-muted);
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.header > button {
+  display: grid;
+  place-items: center;
+
+  width: 36px;
+  height: 36px;
+
+  flex-shrink: 0;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: var(--color-background);
+
+  color: var(--color-text-muted);
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.header > button:hover {
+  background: rgb(99 102 241 / 0.08);
+
+  color: var(--color-primary);
+}
+
+/* =========================
+   FORM
+========================= */
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+
+  padding: 24px;
+}
+
+/* =========================
+   FORM LABEL
+========================= */
+
+.form label {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.form label > span {
+  color: var(--color-text-primary);
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.form input,
+.form textarea,
+.form select {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 12px 13px;
+
+  border: 1px solid var(--color-border);
+  border-radius: 9px;
+
+  outline: none;
+
+  background: var(--color-surface);
+
+  color: var(--color-text-primary);
+
+  font-family: inherit;
+  font-size: 14px;
+
+  line-height: 1.5;
+
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.form input:focus,
+.form textarea:focus,
+.form select:focus {
+  border-color: var(--color-primary);
+
+  box-shadow:
+    0 0 0 3px rgb(99 102 241 / 0.08);
+}
+
+/* =========================
+   TEXTAREA
+========================= */
+
+.form textarea {
+  resize: vertical;
+
+  min-height: 100px;
+}
+
+/* =========================
+   MEMORY HELP
+========================= */
+
+.memoryHelp {
+  padding: 12px 13px;
+
+  border-radius: 9px;
+
+  background: rgb(99 102 241 / 0.05);
+
+  color: var(--color-text-muted);
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  padding: 18px 24px;
+
+  border-top: 1px solid var(--color-border);
+}
+
+/* =========================
+   FOOTER BUTTONS
+========================= */
+
+.footer button {
+  height: 40px;
+
+  padding: 0 16px;
+
+  border-radius: 9px;
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.cancel {
+  border: 1px solid var(--color-border);
+
+  background: transparent;
+
+  color: var(--color-text-secondary);
+}
+
+.cancel:hover {
+  background: var(--color-background);
+}
+
+.create {
+  border: 0;
+
+  background: var(--color-primary);
+
+  color: white;
+}
+
+.create:hover {
+  opacity: 0.9;
+}
+
+.create:disabled {
+  opacity: 0.4;
+
+  cursor: not-allowed;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .overlay {
+    padding: 16px;
   }
-  
+
   .modal {
-    width: min(460px, 100%);
-  
-    overflow: hidden;
-  
-    border: 1px solid var(--color-border);
-    border-radius: 15px;
-  
-    background: var(--color-surface);
-  
-    box-shadow:
-      0 24px 70px rgb(15 23 42 / 0.18);
-  }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-  
-    gap: 20px;
-  
-    padding: 20px;
-  
-    border-bottom: 1px solid var(--color-border);
-  }
-  
-  .header > div > span {
-    color: var(--color-primary);
-  
-    font-size: 7px;
-    font-weight: 800;
-  
-    letter-spacing: 0.13em;
-  }
-  
-  .header h2 {
-    margin: 6px 0 0;
-  
-    color: var(--color-text-primary);
-  
-    font-size: 17px;
-  
-    letter-spacing: -0.02em;
-  }
-  
-  .header p {
-    margin: 5px 0 0;
-  
-    color: var(--color-text-muted);
-  
-    font-size: 9px;
-  
-    line-height: 1.5;
-  }
-  
-  .header > button {
-    display: grid;
-    place-items: center;
-  
-    width: 28px;
-    height: 28px;
-  
-    flex-shrink: 0;
-  
-    border: 0;
-    border-radius: 7px;
-  
-    background: var(--color-background);
-  
-    color: var(--color-text-muted);
-  
-    cursor: pointer;
-  }
-  
-  .form {
-    display: flex;
-    flex-direction: column;
-  
-    gap: 15px;
-  
-    padding: 20px;
-  }
-  
-  .form label {
-    display: flex;
-    flex-direction: column;
-  
-    gap: 6px;
-  }
-  
-  .form label > span {
-    color: var(--color-text-primary);
-  
-    font-size: 9px;
-    font-weight: 600;
-  }
-  
-  .form input,
-  .form textarea,
-  .form select {
     width: 100%;
-  
-    box-sizing: border-box;
-  
-    padding: 10px 11px;
-  
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-  
-    outline: none;
-  
-    background: var(--color-surface);
-  
-    color: var(--color-text-primary);
-  
-    font-family: inherit;
-    font-size: 9px;
+
+    max-height: calc(100vh - 32px);
   }
-  
-  .form textarea {
-    resize: vertical;
-  
-    min-height: 70px;
+
+  .header {
+    padding: 20px;
   }
-  
-  .form input:focus,
-  .form textarea:focus,
-  .form select:focus {
-    border-color: var(--color-primary);
+
+  .header h2 {
+    font-size: 20px;
   }
-  
-  .memoryHelp {
-    padding: 9px 10px;
-  
-    border-radius: 8px;
-  
-    background: rgb(99 102 241 / 0.05);
-  
-    color: var(--color-text-muted);
-  
-    font-size: 8px;
-  
-    line-height: 1.5;
+
+  .header p {
+    font-size: 12px;
   }
-  
+
+  .form {
+    padding: 20px;
+
+    gap: 16px;
+  }
+
   .footer {
-    display: flex;
-    justify-content: flex-end;
-  
-    gap: 8px;
-  
-    padding: 15px 20px;
-  
-    border-top: 1px solid var(--color-border);
+    padding: 16px 20px;
   }
-  
-  .footer button {
-    height: 32px;
-  
-    padding: 0 12px;
-  
-    border-radius: 8px;
-  
-    font-family: inherit;
-  
-    font-size: 9px;
-    font-weight: 600;
-  
-    cursor: pointer;
-  }
-  
-  .cancel {
-    border: 1px solid var(--color-border);
-  
-    background: transparent;
-  
-    color: var(--color-text-secondary);
-  }
-  
-  .create {
-    border: 0;
-  
-    background: var(--color-primary);
-  
-    color: white;
-  }
-  
-  .create:disabled {
-    opacity: 0.4;
-  
-    cursor: not-allowed;
-  }
+}
