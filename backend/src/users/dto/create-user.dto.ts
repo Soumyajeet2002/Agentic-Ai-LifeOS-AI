@@ -4,7 +4,7 @@ import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 export class CreateUserDto {
   @ApiProperty({
     description: 'User email address',
-    example: 'john.doe@example.com',
+    example: 'admin@gmail.com',
     maxLength: 255,
   })
   @IsEmail()
@@ -13,7 +13,7 @@ export class CreateUserDto {
 
   @ApiPropertyOptional({
     description: 'User full name',
-    example: 'John Doe',
+    example: 'Admin User',
     maxLength: 255,
   })
   @IsOptional()
